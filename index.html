@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piccolo Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vezitka.css">
+</head>
+<body>
+    <header>
+        <div class="overlay">
+            <h1 class="fade-in">Piccolo Cafe</h1>
+            <p class="slide-up">Где уют встречается с вкусом</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="about fade-in">
+            <h2>О нас</h2>
+            <p>Мы предлагаем уютную атмосферу, вкусные блюда и напитки в самом сердце Бреста. Посетите нас и ощутите тепло гостеприимства.</p>
+        </section>
+
+        <section class="contacts fade-in">
+            <h2>Контакты</h2>
+            <div class="contact-info">
+                <p><strong>Адрес:</strong> ул. Коммерческая, 5в, Брест, Беларусь</p>
+                <p><strong>Телефон:</strong> <a href="tel:+375333334040">+375 33 333 40 40</a></p>
+                <p><strong>Email:</strong> <a href="mailto:piccolo.cafe@mail.ru">piccolo.cafe@mail.ru</a></p>
+                <div class="social">
+                    <a href="https://www.instagram.com/piccolo.brest/" target="_blank" class="instagram-link">
+                        <span>Мы в Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="map fade-in">
+            <h2>Найти нас</h2>
+            <iframe 
+                src="https://maps.google.com/maps?q=52.1205848,23.7701945&z=17&output=embed" 
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Piccolo Cafe.</p>
+    </footer>
+
+    <!-- Снежинки -->
+    <div id="snowflakes"></div>
+
+    <script>
+        // Динамическое создание снежинок
+const snowflakesContainer = document.getElementById('snowflakes');
+
+// Функция для генерации снежинок
+function generateSnowflakes() {
+    for (let i = 0; i < 20; i++) {  // Уменьшено количество снежинок
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerHTML = '❄';
+        
+        // Случайное положение и скорость
+        snowflake.style.left = `${Math.random() * 100}%`;
+        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Случайная скорость
+        snowflake.style.animationDelay = `${Math.random() * 5}s`; // Случайная задержка
+
+        snowflakesContainer.appendChild(snowflake);
+    }
+}
+
+// Запуск генерации снежинок
+generateSnowflakes();
+
+    </script>
+</body>
+</html>
