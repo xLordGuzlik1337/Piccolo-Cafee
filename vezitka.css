@@ -149,7 +149,7 @@ main {
 }
 
 .schedule h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;  /* Увеличиваем размер заголовка */
     color: #ff758c;
     text-align: center;
     margin-bottom: 20px;
@@ -158,13 +158,13 @@ main {
 .schedule .days {
     display: flex;
     justify-content: space-between;
-    font-size: 1.6rem;
+    font-size: 1.8rem;  /* Увеличиваем размер текста для дней недели */
 }
 
 .schedule .days .day {
     flex: 1;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     background-color: #f1f1f1;
     margin: 5px;
@@ -192,7 +192,7 @@ main {
 .schedule .weekdays .day {
     flex: 1;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     background-color: #f9f7f7;
     margin: 5px;
@@ -200,6 +200,7 @@ main {
 
 .schedule .weekdays .day span {
     font-weight: bold;
+    font-size: 1.8rem;  /* Увеличиваем размер текста для Пн-Пт */
 }
 
 /* Расписание Сб-Вс (изменен фон) */
@@ -212,7 +213,7 @@ main {
 .schedule .weekend .day {
     flex: 1;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     background-color: #f9f7f7; /* Это более мягкий фон */
     margin: 5px;
@@ -220,6 +221,7 @@ main {
 
 .schedule .weekend .day span {
     font-weight: bold;
+    font-size: 1.8rem;  /* Увеличиваем размер текста для Сб-Вс */
 }
 
 /* Контейнер для расписания */
@@ -233,7 +235,7 @@ main {
 
 /* Стили для вывода времени */
 .schedule .hours {
-    font-size: 1.4rem;
+    font-size: 1.6rem;  /* Увеличиваем размер шрифта для времени */
     color: #333;
 }
 
@@ -257,6 +259,7 @@ main {
         width: 80%;
     }
 }
+
 
 
 /* Подвал */
