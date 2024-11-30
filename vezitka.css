@@ -77,15 +77,21 @@ main {
 .about h2, .contacts h2, .map h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #ff758c;
     text-transform: uppercase;
+}
+
+/* Дополнительно увеличиваем шрифт для текста в "О нас" */
+.about p, .contacts p {
+    font-size: 1.9rem; /* Увеличение шрифта для "О нас" */
+    line-height: 1.8;
 }
 
 /* Контакты */
 .contact-info p {
     margin: 10px 0;
-    font-size: 1.1rem;
+    font-size: 1.9rem;
 }
 
 .contact-info a {
@@ -178,6 +184,18 @@ footer {
     }
 }
 
+/* Уменьшаем количество снежинок на мобильных устройствах */
+@media (max-width: 768px) {
+    .snowflake {
+        animation-duration: 15s; /* Замедление анимации */
+        opacity: 0.6; /* Уменьшение прозрачности */
+    }
+
+    #snowflakes {
+        opacity: 0.5; /* Прозрачность снежинок на мобильных */
+    }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     header h1 {
@@ -194,6 +212,10 @@ footer {
 
     .contact-info p {
         font-size: 1rem;
+    }
+
+    .about p, .contacts p {
+        font-size: 1.1rem; /* Увеличен размер шрифта для текста на мобильных устройствах */
     }
 }
 
@@ -216,5 +238,9 @@ footer {
 
     .social {
         margin-top: 20px;
+    }
+
+    .about p, .contacts p {
+        font-size: 1rem; /* Увеличен размер шрифта для "О нас" и "Контакты" на мобильных устройствах */
     }
 }
