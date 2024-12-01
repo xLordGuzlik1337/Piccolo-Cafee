@@ -363,4 +363,35 @@ footer {
     .about p, .contacts p {
         font-size: 1rem; /* Увеличен размер шрифта для "О нас" и "Контакты" на мобильных устройствах */
     }
+    /* Исходные стили */
+/* Здесь идет ваш полный исходный код */
+
+/* Адаптивное отображение времени под днями недели */
+@media (max-width: 1024px) {
+    .schedule .day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .schedule .day span.hours {
+        display: block; /* Время становится блочным элементом */
+        margin-top: 10px;
+    }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .schedule .days {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .schedule .day {
+        width: 80%;
+        margin-bottom: 10px;
+        padding: 12px;
+    }
+}
+
 }
