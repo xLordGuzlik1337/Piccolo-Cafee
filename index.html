@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piccolo Cafe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="vezitka.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Piccolo Cafe</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> <!-- Добавлено здесь -->
+        <link rel="stylesheet" href="vezitka.css">
+    </head>
+    
 <body>
     <header>
         <div class="overlay">
-            <h1 class="fade-in">Piccolo Cafe</h1>
-            <p class="slide-up">Где уют встречается со вкусом</p>
+            <h1 class="fade-in">PICCOLO</h1>
+            <p class="slide-up">Место со вкусом Италии</p>
+            <p class="veranda-bar">𝒄𝒂𝒇𝒆.𝒗𝒆𝒓𝒂𝒏𝒅𝒂.𝒃𝒂𝒓</p>
         </div>
     </header>
+    
+
+ 
+   
 
     <div class="schedule">
         <h2>Режим работы</h2>
-        
-        <!-- Пн-Пт -->
         <div class="weekdays">
             <div class="day">
                 <span>Понедельник - Пятница</span>
-                <span class="hours">08:00–23:00</span>
+                <span class="hours">08:00–21:00</span>
             </div>
         </div>
         
-        <!-- Сб-Вс -->
         <div class="weekend">
             <div class="day">
                 <span>Суббота - Воскресенье</span>
-                <span class="hours">09:00–23:00</span>
+                <span class="hours">09:00–22:00</span>
             </div>
         </div>
     </div>
@@ -68,32 +72,45 @@
         <p>© 2024 Piccolo Cafe.</p>
     </footer>
 
-    <!-- Снежинки -->
     <div id="snowflakes"></div>
 
     <script>
         // Динамическое создание снежинок
-const snowflakesContainer = document.getElementById('snowflakes');
+        const snowflakesContainer = document.getElementById('snowflakes');
 
-// Функция для генерации снежинок
-function generateSnowflakes() {
-    for (let i = 0; i < 15; i++) {  // Уменьшено количество снежинок
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.innerHTML = '❄';
-        
-        // Случайное положение и скорость
-        snowflake.style.left = `${Math.random() * 100}%`;
-        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Случайная скорость
-        snowflake.style.animationDelay = `${Math.random() * 5}s`; // Случайная задержка
+        function generateSnowflakes() {
+            for (let i = 0; i < 15; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = `${Math.random() * 100}%`;
+                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;
 
-        snowflakesContainer.appendChild(snowflake);
-    }
-}
+                snowflakesContainer.appendChild(snowflake);
+            }
+        }
 
-// Запуск генерации снежинок
-generateSnowflakes();
+        generateSnowflakes();
 
+        // Переключение тем
+        const themeToggleButton = document.getElementById('theme-toggle');
+
+        // Проверяем сохраненную тему
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            // Сохраняем выбранную тему
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.removeItem('theme');
+            }
+        });
     </script>
 </body>
 </html>
