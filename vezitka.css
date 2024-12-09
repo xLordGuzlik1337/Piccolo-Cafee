@@ -11,7 +11,7 @@ body {
 
 /* Шапка */
 header {
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    background: linear-gradient(135deg, #8B4513, #A0522D);
     height: 300px;
     display: flex;
     align-items: center;
@@ -42,16 +42,38 @@ header p {
     animation: slideUp 2s forwards 1.5s;
 }
 
-/* Анимации для текста */
+header .veranda-bar {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #fffbea; /* Более светлый цвет */
+    margin-top: 10px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); /* Увеличенная тень */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s forwards 2s; /* Плавная анимация */
+}
+
+/* Анимации */
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
 
 /* Контент */
 main {
@@ -393,5 +415,6 @@ footer {
         padding: 12px;
     }
 }
+
 
 }
